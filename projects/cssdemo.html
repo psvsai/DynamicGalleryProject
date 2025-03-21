@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+       body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: #f8f9fa;
+}
+
+.google-logo {
+    display: flex;
+    font-size: 50px;
+    gap: 5px;
+}
+
+.letter {
+    height: 80px;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.letter:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Colors for each letter */
+.letter:nth-child(1) { color: #6abaa6; }
+.letter:nth-child(2) { color: #db8888; }
+.letter:nth-child(3) { color: #f2d000; }
+.letter:nth-child(4) { color: #20b2aa; }
+.letter:nth-child(5) { color: #90ee90; }
+.letter:nth-child(6) { color: #ff8c00; }
+
+    </style>
+</head>
+
+<body>
+    <div class="google-logo">
+        <div class="letter1 box">V</div>
+        <div class="letter2 box">A</div>
+        <div class="letter3 box">N</div>
+        <div class="letter4 box">G</div>
+        <div class="letter5 box">A</div>
+        
+    </div>
+</body>
+
+</html>

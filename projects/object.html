@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information UI</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input {
+            margin: 5px;
+            padding: 8px;
+            width: 250px;
+        }
+        button {
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: darkblue;
+        }
+        #output {
+            margin-top: 20px;
+            font-weight: bold;
+            text-align: left;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Enter Your Information</h2>
+    <input type="text" id="fullName" placeholder="Enter Full Name">
+    <input type="text" id="location" placeholder="Enter location">
+    <input type="email" id="email" placeholder="Enter Email">
+    <input type="text" id="course" placeholder="Enter Course">
+    <br>
+    <button onclick="saveInfo()">Save Info</button>
+    <button onclick="displayInfo()">Show All Entries</button>
+
+    <div id="output"></div>
+
+    <script>
+        let users = [];
+
+        function saveInfo() {
+            let fullName = document.getElementById("fullName").value;
+            let location = document.getElementById("location").value;
+            let email = document.getElementById("email").value;
+            let course = document.getElementById("course").value;
+
+            if (fullName && email && course) {
+                users.push({ fullName, location, email, course });
+                alert("Information Saved!");
+                document.getElementById("fullName").value = "";
+                document.getElementById("location").value = "";
+                document.getElementById("email").value = "";
+                document.getElementById("course").value = "";
+            } else {
+                alert("Please fill all fields before saving.");
+            }
+        }
+
+        function displayInfo() {
+            let outputDiv = document.getElementById("output");
+            outputDiv.innerHTML = "<h3>All Entries:</h3>";
+
+            if (users.length === 0) {
+                outputDiv.innerHTML += "<p>No information available.</p>";
+                return;
+            }
+
+            users.forEach((user, index) => {
+                outputDiv.innerHTML += `
+                    <p><strong>Entry ${index + 1}</strong></p>
+                    <p>Full Name: ${user.fullName}</p>
+                    <p>location: ${user.location}</p>
+                    <p>Email: ${user.email}</p>
+                    <p>Course: ${user.course}</p>
+                    <hr>
+                `;
+            });
+        }
+    </script>
+
+</body>
+</html>

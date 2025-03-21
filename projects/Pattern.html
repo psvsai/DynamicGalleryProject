@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Pattern</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        input {
+            padding: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        #demo {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <input type="number" placeholder="Enter a positive number" id="number" oninput="generateStars()">
+    <div id="demo"></div>
+
+    <script>
+        const colors = ["red", "green", "blue", "orange"];
+        let colorIndex = 0;
+
+        function generateStars() {
+            let input = document.getElementById("number").value;
+            let output = "";
+            
+            for (let i = 1; i <= input; i++) {
+                output += "* ".repeat(i) + "<br>";
+            }
+
+            let demoDiv = document.getElementById("demo");
+            demoDiv.innerHTML = output;
+            
+            // Change color in a cyclic manner
+            demoDiv.style.color = colors[colorIndex];
+            colorIndex = (colorIndex + 1) % colors.length;
+        }
+    </script>
+
+</body>
+</html>

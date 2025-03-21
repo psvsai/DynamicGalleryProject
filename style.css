@@ -1,0 +1,295 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    background: #f5f7fa; /* Light gray background */
+    color: #333;
+}
+
+/* Sidebar (Vertical Navbar) */
+/* Sidebar (Scrollable Vertical Navbar) */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: linear-gradient(180deg, #3cb7e7, #ef99fa); /* Dark gradient */
+    padding-top: 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 5px 0px 15px rgba(216, 154, 240, 0.3);
+    transition: width 0.3s ease-in-out;
+    
+    /* Enable scrolling */
+    overflow-y: auto;
+    max-height: 100vh;
+    scrollbar-width: thin; /* Firefox */
+}
+
+/* Custom Scrollbar for Webkit Browsers */
+.sidebar::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 3px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+/* Logo */
+.sidebar .logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 6px rgba(187, 121, 121, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar .logo:hover {
+    transform: scale(1.08);
+}
+
+.nav-item {
+    background: none;
+    border: none;
+    color: #343b18;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 14px 22px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+    border-left: 4px solid transparent;
+}
+
+.nav-item:hover,
+.nav-item.active {
+    background: linear-gradient(90deg, rgba(74, 100, 59, 0.3), transparent);
+    color: #ecdddd;
+    border-left: 4px solid #0a0e11;
+    transform: translateX(5px);
+}
+
+/* Navigation Links */
+.nav-links {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+.nav-links a {
+    padding: 14px 22px;
+    color: #e4e28f;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    border-left: 4px solid transparent;
+    width: 100%;
+    position: relative;
+}
+
+/* Icons for Nav Links */
+.nav-links a::before {
+    content: '•'; /* Bullet point effect */
+    font-size: 18px;
+    color: #dbe7f3;
+    margin-right: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.nav-links a:hover::before,
+.nav-links a.active::before {
+    opacity: 1;
+}
+
+/* Hover & Active State */
+.nav-links a:hover,
+.nav-links a.active {
+    background: linear-gradient(90deg, rgba(0, 123, 255, 0.3), transparent);
+    color: #ce9595;
+    border-left: 4px solid #252c20;
+    transform: translateX(5px);
+}
+
+/* Content Section */
+.content {
+    margin-left: 270px;
+    padding: 60px;
+    width: calc(100% - 270px);
+    transition: margin-left 0.3s ease-in-out;
+    background: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Headings */
+.content h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    border-bottom: 3px solid #d3e75d;
+    display: inline-block;
+    padding-bottom: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.content h2:hover {
+    color: #d3b247;
+    transform: translateX(5px);
+}
+
+/* Paragraphs */
+.content p {
+    font-size: 16px;
+    line-height: 1.7;
+    color: #444;
+    letter-spacing: 0.5px;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card Style */
+.card {
+    background: white;
+    padding: 30px; /* Increased padding for a spacious look */
+    border-radius: 25px; /* Smooth rounded edges */
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.25); /* Stronger shadow for depth */
+    width: 70%; /* Increased width */
+    max-width: 800px; /* Prevents card from becoming too large on big screens */
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin: 20px auto; /* Centering */
+    overflow: hidden; /* Prevents content from overflowing */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hover Effect - More Elevation */
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Card Heading */
+.card h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Card Description */
+.card p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #444;
+    letter-spacing: 0.5px;
+}
+
+/* Button inside Card */
+.card .button {
+    margin-top: 15px;
+    padding: 14px 28px;
+    font-size: 18px;
+    border-radius: 10px;
+}
+/* Professional Button Style */
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    background: linear-gradient(90deg, #ff7e5f, #ffb347);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(255, 126, 95, 0.3);
+    transition: all 0.3s ease-in-out;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: linear-gradient(90deg, #ff5733, #ff8c42);
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(255, 87, 51, 0.4);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .content {
+        margin-left: 250px;
+        padding: 50px;
+        width: calc(100% - 250px);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 220px;
+    }
+
+    .content {
+        margin-left: 230px;
+        padding: 40px;
+        width: calc(100% - 230px);
+    }
+
+    .card {
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sidebar {
+        width: 180px;
+        padding-top: 20px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+        padding: 12px 18px;
+    }
+
+    .content {
+        margin-left: 190px;
+        padding: 30px;
+        width: calc(100% - 190px);
+    }
+
+    .card {
+        width: 90%;
+    }
+}

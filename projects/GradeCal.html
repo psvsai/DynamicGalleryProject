@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Grade Calculator</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+            }
+
+            .container {
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+                width: 300px;
+            }
+
+            h3 {
+                color: #333;
+                margin-bottom: 15px;
+            }
+
+            input {
+                width: 90%;
+                padding: 8px;
+                font-size: 16px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+                outline: none;
+                text-align: center;
+            }
+
+            input:focus {
+                border-color: #4a90e2;
+            }
+
+            .result {
+                margin-top: 15px;
+                font-size: 18px;
+                font-weight: bold;
+                color: #444;
+            }
+
+            #grade_span {
+                color: #e63946;
+                font-size: 22px;
+            }
+        </style>
+
+        <script>
+            function update() {
+                let score = parseFloat(document.getElementById("input").value);
+                let grade = "";
+
+                if (score >= 80) {
+                    grade = "A";
+                } else if (score >= 60 && score <= 79) {
+                    grade = "B";
+                } else if (score >= 40 && score <= 59) {
+                    grade = "C";
+                } else if (score >= 0 && score <= 39) {
+                    grade = "F";
+                } else {
+                    grade = "";
+                }
+
+                document.getElementById("grade_span").innerHTML = grade;
+                console.log(grade); // Debugging output in console
+            }
+        </script>
+    </head>
+
+    <body>
+        <div class="container">
+            <h3>Grade Calculator</h3>
+            <input type="number" placeholder="Enter score here" id="input" onkeyup="update()" />
+            <div class="result">Your grade is: <span id="grade_span"></span></div>
+        </div>
+    </body>
+</html>

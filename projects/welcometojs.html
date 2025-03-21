@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to JS</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background: #cfeff3;
+    text-align: center;
+    padding: 50px;
+}
+
+input {
+    padding: 8px;
+    width: 220px;
+    font-size: 14px;
+    border: 1.5px solid #007BFF;
+    border-radius: 6px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+input:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 4px rgba(0, 91, 187, 0.4);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 14px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: #0056b3;
+    transform: scale(1.03);
+}
+
+
+    </style>
+    <script>
+        function enter_click() {
+            let name = document.getElementById("username").value;
+            alert("Welcome to JS " + name);
+        }
+    </script>
+</head>
+<body>
+
+    <h2></h2>
+    <input type="text" placeholder="Enter your name" id="username"/>
+    <br>
+    <button onclick="enter_click()">Enter</button>
+
+</body>
+</html>

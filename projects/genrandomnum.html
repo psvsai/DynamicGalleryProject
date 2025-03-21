@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        #output {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: opacity 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Generate a Random Number in Your Range and it will disappear and reappear in 5 seconds</h2>
+    
+    <label>Min:</label>
+    <input type="number" id="start" placeholder="Min value">
+    
+    <label>Max:</label>
+    <input type="number" id="end" placeholder="Max value">
+    
+    <br>
+    <button onclick="generateRandom()">Get Random Number</button>
+    
+    <p id="output">Your random number will appear here.</p>
+
+    <script>
+        function generateRandom() {
+            let a = Number(document.getElementById('start').value);
+            let b = Number(document.getElementById('end').value);
+            let output = document.getElementById('output');
+
+            if (isNaN(a) || isNaN(b)) {
+                output.textContent = "Please enter valid numbers.";
+                output.style.color = "black"; 
+                output.style.opacity = "1"; // Ensure it's visible
+                return;
+            }
+
+            if (a > b) [a, b] = [b, a]; 
+
+            let randomNum = Math.floor(Math.random() * (b - a + 1)) + a;
+            let randomColor = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+
+            output.textContent = `Random Number: ${randomNum}`;
+            output.style.color = randomColor;
+            output.style.opacity = "1"; // Make sure it's visible
+
+            // Vanish after 5s and reappear after another 5s
+            setTimeout(() => {
+                output.style.opacity = "0"; // Vanish
+                setTimeout(() => {
+                    output.style.opacity = "1"; // Reappear
+                }, 5000);
+            }, 5000);
+        }
+    </script>
+
+</body>
+</html>
