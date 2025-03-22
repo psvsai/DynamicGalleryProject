@@ -3,44 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Pattern</title>
+    <title>Star Pattern Generator</title>
     <style>
+        /* Background Styling */
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #8e44ad, #3498db);
+            color: white;
+            text-align: center;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
+
+        /* Container */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 400px;
+        }
+
+        /* Input Field */
         input {
-            padding: 5px;
-            font-size: 16px;
-            margin-bottom: 10px;
-        }
-        #demo {
+            width: 80%;
+            padding: 12px;
             font-size: 18px;
+            border: none;
+            border-radius: 6px;
+            outline: none;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        /* Star Pattern Output */
+        #demo {
+            font-size: 20px;
             font-weight: bold;
-            margin-top: 10px;
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            min-height: 50px;
+            transition: all 0.3s ease-in-out;
         }
     </style>
 </head>
 <body>
 
-    <input type="number" placeholder="Enter a positive number" id="number" oninput="generateStars()">
-    <div id="demo"></div>
+    <div class="container">
+        <h2>✨ Star Pattern Generator ✨</h2>
+        <input type="number" min="1" placeholder="Enter a positive number" id="number" oninput="generateStars()">
+        <div id="demo"></div>
+    </div>
 
     <script>
-        const colors = ["red", "green", "blue", "orange"];
+        const colors = ["#ff4757", "#2ed573", "#1e90ff", "#fbc531", "#e056fd"];
         let colorIndex = 0;
 
         function generateStars() {
             let input = document.getElementById("number").value;
             let output = "";
-            
+
             for (let i = 1; i <= input; i++) {
                 output += "* ".repeat(i) + "<br>";
             }
 
             let demoDiv = document.getElementById("demo");
             demoDiv.innerHTML = output;
-            
+
             // Change color in a cyclic manner
             demoDiv.style.color = colors[colorIndex];
             colorIndex = (colorIndex + 1) % colors.length;

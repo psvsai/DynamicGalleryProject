@@ -11,8 +11,8 @@ body {
 /* Sidebar (Scrollable Vertical Navbar) */
 .sidebar {
     width: 260px;
-    height: 100vh;
-    background: linear-gradient(180deg, #3cb7e7, #ef99fa); /* Dark gradient */
+    height: 95vh;
+    background: linear-gradient(180deg, #080808, #37656d); /* Dark gradient */
     padding-top: 30px;
     position: fixed;
     top: 0;
@@ -25,7 +25,7 @@ body {
     
     /* Enable scrolling */
     overflow-y: auto;
-    max-height: 100vh;
+    max-height: 150vh;
     scrollbar-width: thin; /* Firefox */
 }
 
@@ -48,7 +48,7 @@ body {
 .sidebar .logo {
     font-size: 26px;
     font-weight: bold;
-    color: #ffffff;
+    color: #63c0c0;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-bottom: 30px;
@@ -63,7 +63,7 @@ body {
 .nav-item {
     background: none;
     border: none;
-    color: #343b18;
+    color: #f5f8f0;
     font-size: 16px;
     font-weight: 500;
     padding: 14px 22px;
@@ -77,7 +77,7 @@ body {
 
 .nav-item:hover,
 .nav-item.active {
-    background: linear-gradient(90deg, rgba(74, 100, 59, 0.3), transparent);
+    background: linear-gradient(90deg, rgba(141, 196, 109, 0.3), transparent);
     color: #ecdddd;
     border-left: 4px solid #0a0e11;
     transform: translateX(5px);
@@ -141,6 +141,31 @@ body {
     overflow: hidden;
 }
 
+/* Header Styling */
+.content-header {
+    background: linear-gradient(90deg, #080808, #37656d);
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+.content-header h1 {
+    margin: 0;
+    font-size: 28px;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
 /* Headings */
 .content h2 {
     font-size: 28px;
@@ -167,64 +192,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-.card-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 25px;
-    padding: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Card Style */
-.card {
-    background: white;
-    padding: 30px; /* Increased padding for a spacious look */
-    border-radius: 25px; /* Smooth rounded edges */
-    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.25); /* Stronger shadow for depth */
-    width: 70%; /* Increased width */
-    max-width: 800px; /* Prevents card from becoming too large on big screens */
-    text-align: center;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    margin: 20px auto; /* Centering */
-    overflow: hidden; /* Prevents content from overflowing */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Hover Effect - More Elevation */
-.card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* Card Heading */
-.card h3 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #222;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Card Description */
-.card p {
-    font-size: 18px;
-    line-height: 1.8;
-    color: #444;
-    letter-spacing: 0.5px;
-}
-
-/* Button inside Card */
-.card .button {
-    margin-top: 15px;
-    padding: 14px 28px;
-    font-size: 18px;
-    border-radius: 10px;
-}
+ 
 /* Professional Button Style */
 .button {
     display: inline-block;
