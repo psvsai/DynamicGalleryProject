@@ -2,8 +2,9 @@ const projects = [
     {
         "id": "project1",
         "title": "Home ",
-        "description": "Welcome to my project.",
-        "link": "projects/Home.html"
+        "description": "",
+        "link": "projects/Home.html",
+        "icon": "#", 
     },
     {
         "id": "project2",

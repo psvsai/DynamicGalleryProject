@@ -7,65 +7,38 @@
     <style>
         /* Background Styling */
         body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(to right, #ff9a9e, #fad0c4);
-            color: #2c3e50;
-            text-align: center;
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #4b502c, #24282b);
+    color: white;
+    text-align: center;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        /* Main Container */
-        .container {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            width: 90%;
-            max-width: 400px;
-            backdrop-filter: blur(10px);
-        }
+input, #demo {
+    width: 80%;
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 6px;
+    text-align: center;
+    transition: 0.3s;
+}
 
-        /* Input Field */
-        input {
-            width: 60px;
-            padding: 10px;
-            font-size: 18px;
-            text-align: center;
-            border: none;
-            border-radius: 8px;
-            outline: none;
-            transition: all 0.3s ease-in-out;
-        }
+input { border: none; outline: none; }
 
-        input:focus {
-            background: rgba(255, 255, 255, 0.5);
-            color: #34495e;
-        }
+input:focus { background: rgba(255, 255, 255, 0.2); color: white; }
 
-        /* Label */
-        label {
-            font-size: 18px;
-            font-weight: bold;
-        }
+#demo {
+    font-weight: bold;
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    min-height: 50px;
+}
 
-        /* Star Pattern Output */
-        .stars {
-            font-family: monospace;
-            white-space: pre;
-            font-size: 18px;
-            font-weight: bold;
-            margin-top: 15px;
-            padding: 15px;
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.3);
-            color: #2c3e50;
-            transition: all 0.3s ease-in-out;
-        }
+
+
     </style>
 </head>
 <body>

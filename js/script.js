@@ -1,13 +1,48 @@
 // Function to generate the navigation menu dynamically
 function loadNavbar() {
     const navbar = document.getElementById("navbar");
+
     projects.forEach(project => {
-        let navItem = document.createElement("button"); // Use a button instead of <a>
-        navItem.textContent = project.title;
+        let navItem = document.createElement("button"); 
         navItem.classList.add("nav-item");
-        navItem.onclick = () => displayProject(project); // Keep the onclick event
+
+        // Get icon class
+        let iconClass = getProjectIcon(project.category); 
+        
+        // Ensure valid icon class is assigned
+        if (iconClass) {
+            navItem.innerHTML = `<i class="fa-solid ${iconClass}"></i> ${project.title}`;
+        } else {
+            navItem.innerHTML = `<i class="fa-solid fa-folder"></i> ${project.title}`; // Default icon
+        }
+
+        navItem.onclick = () => displayProject(project); 
         navbar.appendChild(navItem);
     });
+}
+
+
+// Function to assign icons based on project category
+function getProjectIcon(category) {
+    const iconMap = {
+        "Home": "fa-house", 
+        "Index HTML": "fa-file-code", 
+        "CSS Demo": "fa-paint-brush", 
+        "Console": "fa-terminal",
+        "Welcome to js": "fa-js", 
+        "Grade Condition": "fa-list-check", 
+        "Calculator": "fa-calculator", 
+        "Car Age Calculator": "fa-car", 
+        "Star Pattern Genertor": "fa-star", 
+        "TaskPipeline Manager": "fa-tasks", 
+        "User Information": "fa-user", 
+        "Student Information": "fa-graduation-cap", 
+        "Random Number Generator": "fa-random", 
+        "BootStrap Form": "fa-window-restore", 
+        "CreativeSites": "fa-palette",
+        "E-commerce": "fa-shopping-cart",
+    };
+    return iconMap[category] || "fa-folder"; // Default icon if category not found
 }
 
 function displayProject(project) {
@@ -31,8 +66,17 @@ function displayProject(project) {
     document.getElementById("project-frame").appendChild(iframe);
 }
 
-// Load the navbar and default content on page load
+// Load Font Awesome dynamically
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("Font Awesome Loaded:", document.querySelector("link[href*='font-awesome']"));
+
+    loadNavbar();
+
+    // Check if icons are added
+    console.log("Navbar Items:", document.querySelectorAll(".nav-item i"));
+
+
+
     loadNavbar();
     displayProject(projects[0]); // Display first project by default
 });
